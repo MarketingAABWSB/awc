@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Target, Compass } from 'lucide-react';
+import { Target, Compass, User, Users } from 'lucide-react';
 
 export default function About() {
   useEffect(() => {
@@ -8,54 +8,105 @@ export default function About() {
 
   return (
     <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
-      {/* Page Header */}
-      <div style={{ backgroundColor: 'var(--secondary)', color: 'white', padding: '4rem 0', textAlign: 'center' }}>
+      {/* Pengenalan Syarikat (Kisah Kami style) */}
+      <section className="section" style={{ backgroundColor: 'var(--background)', paddingTop: '4rem' }}>
         <div className="container">
-          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Tentang Kami</h1>
-          <p style={{ color: '#cbd5e1', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-            Kenali lebih lanjut tentang kepakaran, visi, dan misi Azam Work Construction dalam menyediakan perkhidmatan teknikal terbaik.
-          </p>
-        </div>
-      </div>
-
-      <section className="section">
-        <div className="container">
-          <div className="about-grid" style={{ marginBottom: '4rem' }}>
-            <div className="about-text" style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>
-              <h2 style={{ color: 'var(--secondary)', marginBottom: '1.5rem', fontSize: '2rem' }}>Pengenalan Syarikat</h2>
-              <p>
-                <strong>Azam Work Construction</strong> ialah sebuah perniagaan perkongsian yang ditubuhkan pada Oktober 2022. Kami mengkhususkan kepakaran dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial.
-              </p>
-              <p>
-                Fokus utama perkhidmatan kami merangkumi kerja-kerja sistem penyaman udara yang menyeluruh, pendawaian elektrik, dan pemasangan sistem keselamatan CCTV yang canggih untuk memastikan keselesaan dan keselamatan pelanggan kami.
-              </p>
+          <div className="about-split-layout">
+            <div className="about-split-text">
+              <span className="section-label">PENGENALAN SYARIKAT</span>
+              <h2 className="section-heading-large">Pakar Penyelesaian Teknikal & Utiliti Anda.</h2>
+              <div className="divider-small"></div>
+              
+              <div className="about-description">
+                <p>
+                  <strong>Azam Work Construction</strong> ialah sebuah perniagaan perkongsian yang ditubuhkan pada Oktober 2022. Kami mengkhususkan kepakaran dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial.
+                </p>
+                <p>
+                  Fokus utama perkhidmatan kami merangkumi kerja-kerja sistem penyaman udara yang menyeluruh, pendawaian elektrik, dan pemasangan sistem keselamatan CCTV yang canggih untuk memastikan keselesaan dan keselamatan pelanggan kami.
+                </p>
+              </div>
             </div>
-            <div className="hero-image-placeholder" style={{ backgroundColor: '#e5e7eb', borderRadius: '1rem', overflow: 'hidden', height: '100%' }}>
-               <img src="/aircond_service.jpg" alt="Azam Work Construction Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            
+            <div className="about-split-image">
+              <div className="image-wrapper-with-badge">
+                <img src="/sign.jpeg" alt="Azam Work Construction Team" className="main-rounded-img" />
+                <div className="floating-badge">
+                  <span className="badge-title">2022</span>
+                  <span className="badge-subtitle">TAHUN DITUBUHKAN</span>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <h2 className="section-title" style={{ marginTop: '2rem' }}>Hala Tuju Kami</h2>
-          <div className="vision-mission" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            <div className="vm-card" style={{ backgroundColor: 'var(--surface)', padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <Target size={32} color="var(--primary)" />
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0' }}>Visi Kami</h3>
+      {/* Hala Tuju (Siapa Kami style) */}
+      <section className="section" style={{ backgroundColor: '#111827', color: 'white' }}>
+        <div className="container">
+          <span className="section-label" style={{ color: '#94a3b8' }}>HALA TUJU KAMI</span>
+          <h2 className="section-heading-large" style={{ color: 'white', marginBottom: '3rem' }}>Kecemerlangan Teknikal,<br/>Keselesaan Optimum.</h2>
+          
+          <div className="dark-grid-card">
+            <div className="dark-grid">
+              {/* Visi */}
+              <div className="dark-grid-item">
+                <span className="grid-item-label">VISI</span>
+                <h3 className="grid-item-heading">Visi Kami</h3>
+                <p className="grid-item-text">
+                  Menjadi penyedia perkhidmatan teknikal utiliti dan sistem keselamatan premis yang diyakini serta menjadi pilihan utama menerusi hasil kerja yang selamat, cekap, dan berkualiti tinggi.
+                </p>
+                <div className="grid-item-divider"></div>
               </div>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
-                Menjadi penyedia perkhidmatan teknikal utiliti dan sistem keselamatan premis yang diyakini serta menjadi pilihan utama menerusi hasil kerja yang selamat, cekap, dan berkualiti tinggi.
+              
+              {/* Misi */}
+              <div className="dark-grid-item">
+                <span className="grid-item-label">MISI</span>
+                <h3 className="grid-item-heading">Misi Kami</h3>
+                <p className="grid-item-text">
+                  Memberikan perkhidmatan pemasangan, penyelenggaraan, dan pembaikan teknikal (elektrik, penyaman udara, dan CCTV) yang berkualiti tinggi, telus, serta menepati piawaian keselamatan demi memastikan keselesaan, perlindungan, dan kepuasan berterusan untuk setiap pelanggan kami.
+                </p>
+                <div className="grid-item-divider"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latar Belakang & Carta Organisasi (Pasukan Kami style) */}
+      <section className="section" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <span className="section-label">KEPIMPINAN SYARIKAT</span>
+          <h2 className="section-heading-large" style={{ marginBottom: '3rem' }}>Latar Belakang Pengarah</h2>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', marginBottom: '5rem' }}>
+            {/* Director 1 */}
+            <div className="director-card" style={{ backgroundColor: 'var(--surface)', padding: '3rem', borderRadius: '1.5rem', boxShadow: 'var(--shadow-md)', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '180px', height: '180px', borderRadius: '50%', overflow: 'hidden', marginBottom: '2rem', border: '5px solid white', boxShadow: '0 15px 30px rgba(0,0,0,0.12)' }}>
+                <img src="/boss azam.png" alt="En. Muhamad Azam Bin Yaakub" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+              </div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>En. Muhamad Azam Bin Yaakub</h3>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                Sebagai peneraju utama syarikat, kepakaran En. Muhamad Azam memfokuskan kepada pengurusan strategik, perancangan kewangan dan pengembangan perniagaan merentasi pelbagai sektor termasuk pembinaan, automotif, dan agro. Beliau memiliki pengalaman lebih sedekad dalam memajukan kejuruteraan dan industri, serta amat mahir dalam pengurusan syarikat korporat Bumiputera. Kredibiliti kepimpinan beliau dikukuhkan lagi dengan pendaftaran sijil-sijil utama industri seperti Sijil Taraf Bumiputera (STB), CIDB, dan Kementerian Kewangan (MOF).
               </p>
             </div>
             
-            <div className="vm-card" style={{ backgroundColor: 'var(--surface)', padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <Compass size={32} color="var(--primary)" />
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0' }}>Misi Kami</h3>
+            {/* Director 2 */}
+            <div className="director-card" style={{ backgroundColor: 'var(--surface)', padding: '3rem', borderRadius: '1.5rem', boxShadow: 'var(--shadow-md)', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '180px', height: '180px', borderRadius: '50%', overflow: 'hidden', marginBottom: '2rem', border: '5px solid white', boxShadow: '0 15px 30px rgba(0,0,0,0.12)' }}>
+                <img src="/boss zul.png" alt="Zulbaharin Bin Mamat" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
-                Memberikan perkhidmatan pemasangan, penyelenggaraan, dan pembaikan teknikal (elektrik, penyaman udara, dan CCTV) yang berkualiti tinggi, telus, serta menepati piawaian keselamatan demi memastikan keselesaan, perlindungan, dan kepuasan berterusan untuk setiap pelanggan kami.
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>Zulbaharin Bin Mamat</h3>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
+                En. Zulbaharin memainkan peranan penting dalam menerajui aspek pengurusan operasi dan teknikal AWC. Kepakaran utama beliau tertumpu kepada penyeliaan projek di lapangan, kawalan kualiti (QC), dan pengurusan tenaga kerja mahir bagi sistem penyaman udara, pendawaian elektrik, dan CCTV. Berbekalkan pengalaman luas dan sijil kompetensi penyeliaan tapak bina, beliau berdedikasi memastikan setiap projek pembinaan dan penyelenggaraan disiapkan menepati jadual dan mematuhi piawaian standard kerja yang paling ketat.
               </p>
             </div>
+          </div>
+
+          <span className="section-label">STRUKTUR ORGANISASI</span>
+          <h2 className="section-heading-large" style={{ marginBottom: '3rem' }}>Carta Organisasi</h2>
+          
+          <div className="org-chart-card">
+            <img src="/org-chart.png" alt="Carta Organisasi Azam Work Construction" />
           </div>
         </div>
       </section>

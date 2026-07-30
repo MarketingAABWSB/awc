@@ -25,9 +25,9 @@ export default function Home() {
           <div className="hero-bottom-grid">
             <div className="hero-bottom-left">
               <h2>Pakar Penyaman Udara, Pendawaian & CCTV untuk Premis Anda.</h2>
-              <button className="btn-pill" onClick={() => scrollToSection('hubungi-kami')}>
+              <a href="https://api.whatsapp.com/send/?phone=60177079747&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="btn-pill">
                 DAPATKAN TEMUJANJI!
-              </button>
+              </a>
             </div>
             <div className="hero-bottom-right">
               <div className="hero-description-bordered">
@@ -47,21 +47,26 @@ export default function Home() {
       <section id="tentang-kami" className="section about">
         <div className="container">
           <h2 className="section-title">Tentang Kami</h2>
-          <div className="bento-grid" style={{ gridTemplateColumns: '1.5fr 1fr' }}>
+          <div className="bento-grid">
             {/* Box 1: Intro */}
             <div className="bento-card bento-main" style={{ minHeight: '100%' }}>
-              <img src="/aircond_service.jpg" alt="Azam Work Construction" className="bento-bg" />
+              <img src="/sign.jpeg" alt="Azam Work Construction" className="bento-bg" />
               <div className="bento-overlay-dark"></div>
               <div className="bento-content">
                 <span className="bento-label bento-label-primary">PENGENALAN SYARIKAT</span>
-                <h3 style={{ marginBottom: '1.5rem', fontSize: '2.2rem' }}>Kepakaran Teknikal, Diperkukuh oleh Pengalaman & Keselamatan.</h3>
-                <p style={{ color: '#cbd5e1', fontSize: '1.1rem', lineHeight: '1.6', maxWidth: '95%' }}>
+                <h3>Kepakaran Teknikal, Diperkukuh oleh Pengalaman & Keselamatan.</h3>
+                <p>
                   <strong>Azam Work Construction</strong> ditubuhkan pada Oktober 2022, mengkhususkan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial melalui perkhidmatan penyaman udara, pendawaian elektrik, dan pemasangan sistem CCTV.
                 </p>
+                <div style={{ marginTop: '2.5rem' }}>
+                  <Link to="/about" className="btn-arrow">
+                    Lebih Lanjut <ArrowRight size={18} />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="bento-side-stack" style={{ gridTemplateRows: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="bento-side-stack">
               {/* Box 2: Visi */}
               <div className="bento-card bento-side-card" style={{ padding: '2.5rem' }}>
                 <img src="/wiring2.jpg" alt="Visi Kami" className="bento-bg" />
