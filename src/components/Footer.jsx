@@ -68,9 +68,9 @@ export default function Footer() {
           <div>
             <h4>Servis Kami</h4>
             <div className="footer-links">
-              <Link to="/services">Penyaman Udara (Aircond)</Link>
-              <Link to="/services">Pendawaian Elektrik (Wiring)</Link>
-              <Link to="/services">Sistem Keselamatan (CCTV)</Link>
+              <Link to="/services/aircond">Penyaman Udara (Aircond)</Link>
+              <Link to="/services/wiring">Pendawaian Elektrik (Wiring)</Link>
+              <Link to="/services/cctv">Sistem Keselamatan (CCTV)</Link>
             </div>
           </div>
 

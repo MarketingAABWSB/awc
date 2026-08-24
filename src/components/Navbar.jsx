@@ -75,9 +75,9 @@ export default function Navbar() {
             </a>
             {isServicesOpen && (
               <div className="nav-dropdown-menu">
-                <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Penyaman Udara (Aircond)</Link>
-                <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Pendawaian Elektrik (Wiring)</Link>
-                <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Sistem Keselamatan (CCTV)</Link>
+                <Link to="/services/aircond" onClick={() => setIsMobileMenuOpen(false)}>Penyaman Udara (Aircond)</Link>
+                <Link to="/services/wiring" onClick={() => setIsMobileMenuOpen(false)}>Pendawaian Elektrik (Wiring)</Link>
+                <Link to="/services/cctv" onClick={() => setIsMobileMenuOpen(false)}>Sistem Keselamatan (CCTV)</Link>
               </div>
             )}
           </div>
