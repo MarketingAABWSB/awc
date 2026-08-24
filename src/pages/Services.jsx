@@ -41,7 +41,7 @@ export default function Services() {
                 </div>
               </div>
               <div style={{ order: 2, borderRadius: '1rem', overflow: 'hidden', height: '350px' }}>
-                <img src="/aircond.jpg" alt="Penyaman Udara" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/AC1.jpeg" alt="Penyaman Udara" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
 

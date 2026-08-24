@@ -2,7 +2,15 @@ export const servicesData = {
   aircond: {
     id: 'aircond',
     title: 'Penyaman Udara (Aircond)',
-    image: '/aircond.jpg',
+    image: '/AC1.jpeg',
+    gallery: [
+      '/AC2.jpeg',
+      '/AC5.jpeg',
+      '/AC6.jpeg',
+      '/AC7.jpeg',
+      '/AC8.jpeg',
+      '/AC9.jpeg'
+    ],
     description: 'Menyediakan perkhidmatan lengkap merangkumi konsultasi pemilihan kapasiti (HP) yang sesuai, pemasangan unit baharu, penyelenggaraan berjadual (chemical cleaning dan servis biasa), hingga pembaikan kerosakan teknikal seperti kebocoran gas, masalah pemampat (compressor), atau kecekapan penyejukan yang merosot. Fokus diberikan kepada pengoptimuman penggunaan tenaga elektrik serta pemanjangan jangka hayat peralatan.',
     scope: [
       'Pemasangan unit baharu',

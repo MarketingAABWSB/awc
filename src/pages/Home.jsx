@@ -108,7 +108,7 @@ export default function Home() {
             {/* Aircond */}
             <div className="service-card">
               <div className="service-image">
-                <img src="/aircond.jpg" alt="Penyaman Udara" />
+                <img src="/AC1.jpeg" alt="Penyaman Udara" />
               </div>
               <div className="service-content">
                 <div className="service-icon">
