@@ -1,5 +1,6 @@
 import React from 'react';
 import { Wind, Zap, Shield, ArrowRight, Target, Compass } from 'lucide-react';
+import TikTokCarousel from '../components/TikTokCarousel';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -117,13 +118,18 @@ export default function Home() {
                 <p>
                   Pemasangan unit baharu, servis berjadual, serta baik pulih sistem penyaman udara anda.
                 </p>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                  <Link to="/services/aircond" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                    <ArrowRight size={20} />
+                  </Link>
+                </div>
               </div>
             </div>
             
             {/* Wiring */}
             <div className="service-card">
               <div className="service-image">
-                <img src="/wiring.jpg" alt="Pendawaian Elektrik" />
+                <img src="/wiring 1.jpeg" alt="Pendawaian Elektrik" />
               </div>
               <div className="service-content">
                 <div className="service-icon">
@@ -133,6 +139,11 @@ export default function Home() {
                 <p>
                   Kerja-kerja pendawaian elektrik, penambahan plug point, pembaikan litar pintas, dan naik taraf DB board.
                 </p>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                  <Link to="/services/wiring" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                    <ArrowRight size={20} />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -149,6 +160,11 @@ export default function Home() {
                 <p>
                   Pemasangan sistem CCTV berdefinisi tinggi berserta fungsi pemantauan jarak jauh melalui telefon pintar anda.
                 </p>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                  <Link to="/services/cctv" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                    <ArrowRight size={20} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -188,6 +204,15 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Ikuti Kami - TikTok */}
+      <section id="ikuti-kami" style={{ backgroundColor: '#1c1c1c', padding: '5rem 0', overflow: 'hidden' }}>
+        <div className="container">
+          <h2 className="section-title" style={{ color: 'white' }}>Video TikTok Kami</h2>
+          
+          <TikTokCarousel />
         </div>
       </section>
     </>

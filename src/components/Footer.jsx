@@ -42,7 +42,7 @@ export default function Footer() {
                   <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
                 </svg>
               </a>
-              <a href="https://www.facebook.com/search/top?q=azam%20work%20construction" target="_blank" rel="noopener noreferrer" className="social-icon" title="Azam Work Construction">
+              <a href="https://www.facebook.com/profile.php?id=61592751865212" target="_blank" rel="noopener noreferrer" className="social-icon" title="Azam Work Construction">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
@@ -92,9 +92,13 @@ export default function Footer() {
                 <Phone size={18} />
                 <span>017-707 9747</span>
               </div>
-              <div className="contact-item">
-                <Mail size={18} />
-                <span>azam.wconstruction@gmail.com</span>
+              <div className="contact-item" style={{ alignItems: 'flex-start' }}>
+                <Mail size={18} style={{ flexShrink: 0, marginTop: '4px' }} />
+                <span style={{ whiteSpace: 'nowrap' }}>
+                  <a href="mailto:azam.wconstruction@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }} className="hover-underline">
+                    azam.wconstruction@gmail.com
+                  </a>
+                </span>
               </div>
             </div>
             <div className="operating-hours">
