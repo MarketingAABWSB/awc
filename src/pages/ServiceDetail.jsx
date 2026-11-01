@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
+import { articles } from '../data/articles';
+import ArticleCard from '../components/ArticleCard';
 import { Check, Plus, Minus, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ServiceDetail() {
@@ -31,6 +33,7 @@ export default function ServiceDetail() {
   };
 
   const otherServices = Object.values(servicesData).filter(s => s.id !== serviceId);
+  const relatedGuide = articles.find((article) => article.serviceId === serviceId);
 
   return (
     <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
@@ -120,6 +123,13 @@ export default function ServiceDetail() {
                 ))}
               </ul>
             </div>
+
+            {relatedGuide && (
+              <section className="service-related-guide" aria-labelledby="related-guide-heading" style={{ marginTop: '2rem' }}>
+                <h3 id="related-guide-heading" style={{ fontSize: '1.3rem', marginBottom: '1.25rem', color: 'var(--secondary)' }}>Panduan Berkaitan</h3>
+                <ArticleCard article={relatedGuide} />
+              </section>
+            )}
           </div>
         </div>
       </div>

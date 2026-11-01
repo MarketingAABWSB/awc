@@ -1,89 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  const isArticlesPage = location.pathname === '/artikel' || location.pathname.startsWith('/artikel/');
+  const isHomeSection = (targetId) => location.pathname === '/' && (
+    location.hash === `#${targetId}` || (targetId === 'laman-utama' && !location.hash)
+  );
+
+  const closeMenus = () => {
+    setIsMobileMenuOpen(false);
+    setIsServicesOpen(false);
+  };
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsServicesOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
-    <nav className={`navbar ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`} aria-label="Navigasi utama">
       <div className="container nav-container">
 
         {/* Hamburger Menu (Mobile Left) */}
-        <button className="nav-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={isMobileMenuOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="main-navigation"
+          onClick={() => {
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+            setIsServicesOpen(false);
+          }}
+        >
           {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
 
         {/* Logo (Centered) */}
-        <Link to="/" className="nav-logo" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>
+        <Link to="/" className="nav-logo" onClick={closeMenus}>
           <img src="/LOGO_AWC.png" alt="Azam Work Construction" style={{ height: '70px', objectFit: 'contain' }} />
         </Link>
-        <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="#laman-utama" className="active" onClick={(e) => handleNavClick(e, 'laman-utama')}>Laman Utama</a>
-          <a href="#tentang-kami" onClick={(e) => handleNavClick(e, 'tentang-kami')}>Tentang Kami</a>
+        <div id="main-navigation" className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <Link to="/#laman-utama" className={isHomeSection('laman-utama') ? 'active' : undefined} onClick={closeMenus}>Laman Utama</Link>
+          <Link to="/#tentang-kami" className={isHomeSection('tentang-kami') || location.pathname === '/about' ? 'active' : undefined} onClick={closeMenus}>Tentang Kami</Link>
 
           <div
             className="nav-dropdown-container"
             onMouseEnter={() => window.innerWidth > 1024 && setIsServicesOpen(true)}
             onMouseLeave={() => window.innerWidth > 1024 && setIsServicesOpen(false)}
           >
-            <a
-              href="#servis-kami"
-              className="dropdown-trigger"
+            <Link
+              to="/#servis-kami"
+              className={`dropdown-trigger ${isHomeSection('servis-kami') || location.pathname.startsWith('/services') ? 'active' : ''}`}
+              aria-expanded={isServicesOpen}
+              aria-controls={isServicesOpen ? 'services-navigation' : undefined}
               onClick={(e) => {
                 if (window.innerWidth <= 1024) {
                   e.preventDefault();
                   setIsServicesOpen(!isServicesOpen);
                 } else {
-                  handleNavClick(e, 'servis-kami');
+                  closeMenus();
                 }
               }}
             >
               Servis Kami <ChevronDown size={14} style={{ transform: isServicesOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
-            </a>
+            </Link>
             {isServicesOpen && (
-              <div className="nav-dropdown-menu">
-                <Link to="/services/aircond" onClick={() => setIsMobileMenuOpen(false)}>Penyaman Udara (Aircond)</Link>
-                <Link to="/services/wiring" onClick={() => setIsMobileMenuOpen(false)}>Pendawaian Elektrik (Wiring)</Link>
-                <Link to="/services/cctv" onClick={() => setIsMobileMenuOpen(false)}>Sistem Keselamatan (CCTV)</Link>
+              <div id="services-navigation" className="nav-dropdown-menu">
+                <Link to="/services/aircond" onClick={closeMenus}>Penyaman Udara (Aircond)</Link>
+                <Link to="/services/wiring" onClick={closeMenus}>Pendawaian Elektrik (Wiring)</Link>
+                <Link to="/services/cctv" onClick={closeMenus}>Sistem Keselamatan (CCTV)</Link>
               </div>
             )}
           </div>
 
-          <a href="#kenapa-pilih-kami" onClick={(e) => handleNavClick(e, 'kenapa-pilih-kami')}>Kenapa Kami</a>
-          <a href="#hubungi-kami" onClick={(e) => handleNavClick(e, 'hubungi-kami')}>Hubungi Kami</a>
+          <Link to="/#kenapa-pilih-kami" className={isHomeSection('kenapa-pilih-kami') ? 'active' : undefined} onClick={closeMenus}>Kenapa Kami</Link>
+          <Link to="/artikel" className={isArticlesPage ? 'active' : undefined} aria-current={isArticlesPage ? 'page' : undefined} onClick={closeMenus}>Berita & Panduan</Link>
+          <Link to="/#hubungi-kami" className={isHomeSection('hubungi-kami') ? 'active' : undefined} onClick={closeMenus}>Hubungi Kami</Link>
         </div>
 
         <div className="nav-actions">

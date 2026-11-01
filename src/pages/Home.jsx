@@ -1,18 +1,11 @@
 import React from 'react';
 import { Wind, Zap, Shield, ArrowRight, Target, Compass } from 'lucide-react';
 import TikTokCarousel from '../components/TikTokCarousel';
-import { Link, useNavigate } from 'react-router-dom';
+import ArticleCard from '../components/ArticleCard';
+import { articles } from '../data/articles';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const navigate = useNavigate();
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       {/* Hero Section */}
@@ -203,6 +196,24 @@ export default function Home() {
                 Sebut harga jujur tanpa sebarang kos tersembunyi, disokong oleh khidmat sokongan selepas jualan (after-sales support) yang pantas.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="berita-panduan" className="section articles-preview" aria-labelledby="home-articles-heading">
+        <div className="container">
+          <div className="articles-section-header">
+            <div>
+              <span className="articles-eyebrow">PANDUAN PENJAGAAN RUMAH</span>
+              <h2 id="home-articles-heading">Berita & Panduan</h2>
+              <p>Kenali punca masalah aircond dan elektrik, serta langkah yang sesuai untuk rumah anda.</p>
+            </div>
+            <Link to="/artikel" className="articles-text-link">
+              Lihat Semua Artikel <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="articles-grid">
+            {articles.slice(0, 2).map((article) => <ArticleCard key={article.slug} article={article} />)}
           </div>
         </div>
       </section>

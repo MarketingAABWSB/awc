@@ -1,29 +1,8 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
     <footer id="hubungi-kami" className="footer">
       <div className="container">
@@ -57,10 +36,11 @@ export default function Footer() {
           <div>
             <h4>Pautan Pantas</h4>
             <div className="footer-links">
-              <a href="#laman-utama" onClick={(e) => handleNavClick(e, 'laman-utama')}>Laman Utama</a>
-              <a href="#tentang-kami" onClick={(e) => handleNavClick(e, 'tentang-kami')}>Tentang Kami</a>
-              <a href="#servis-kami" onClick={(e) => handleNavClick(e, 'servis-kami')}>Servis Kami</a>
-              <a href="#kenapa-pilih-kami" onClick={(e) => handleNavClick(e, 'kenapa-pilih-kami')}>Kenapa Kami</a>
+              <Link to="/#laman-utama">Laman Utama</Link>
+              <Link to="/#tentang-kami">Tentang Kami</Link>
+              <Link to="/#servis-kami">Servis Kami</Link>
+              <Link to="/#kenapa-pilih-kami">Kenapa Kami</Link>
+              <Link to="/artikel">Berita & Panduan</Link>
             </div>
           </div>
 
