@@ -34,7 +34,7 @@ export default function GuideEnquiry() {
       ...(units ? [`Bilangan unit: ${units}`] : []),
       `Masalah: ${symptom}`,
       '',
-      'Boleh semak kawasan liputan, cadangan pemeriksaan dan ketersediaan temujanji? Terima kasih.',
+      'Boleh semak kawasan liputan, cadangan pemeriksaan dan slot janji temu yang tersedia? Terima kasih.',
     ].join('\n'));
     setError('');
     setStatus('');
@@ -54,8 +54,8 @@ export default function GuideEnquiry() {
       <div className="container guide-enquiry-layout">
         <div className="guide-enquiry-intro">
           <span className="articles-eyebrow">LANGKAH SETERUSNYA</span>
-          <h2 id="enquiry-heading">Nak tanya technician?<br /><span>Kami mudahkan.</span></h2>
-          <p>Ceritakan keadaan anda. Kami susunkan mesej supaya pertanyaan tentang pemeriksaan, servis dan temujanji lebih jelas.</p>
+          <h2 id="enquiry-heading">Nak tanya juruteknik?<br /><span>Kami mudahkan.</span></h2>
+          <p>Ceritakan keadaan anda. Kami susunkan mesej supaya pertanyaan tentang pemeriksaan, servis dan janji temu lebih jelas.</p>
           <div className="guide-enquiry-note"><MessageCircle size={22} aria-hidden="true" /><p>Semak mesej dahulu, kemudian pilih untuk membukanya di WhatsApp. Borang ini tidak menghantar mesej secara automatik.</p></div>
           <Link to="/services" className="articles-text-link">Kenali Servis Kami <ArrowUpRight size={17} aria-hidden="true" /></Link>
         </div>

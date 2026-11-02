@@ -19,7 +19,7 @@ export default function About() {
               
               <div className="about-description">
                 <p>
-                  <strong>Azam Work Construction</strong> ialah sebuah perniagaan perkongsian yang ditubuhkan pada Oktober 2022. Kami mengkhususkan kepakaran dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial.
+                  <strong>Azam Work Construction</strong> ialah sebuah perniagaan perkongsian yang ditubuhkan pada Oktober 2022. Kami mengkhusus dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial.
                 </p>
                 <p>
                   Fokus utama perkhidmatan kami merangkumi kerja-kerja sistem penyaman udara yang menyeluruh, pendawaian elektrik, dan pemasangan sistem keselamatan CCTV yang canggih untuk memastikan keselesaan dan keselamatan pelanggan kami.
@@ -86,7 +86,7 @@ export default function About() {
               </div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>En. Muhamad Azam Bin Yaakub</h3>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
-                Sebagai peneraju utama syarikat, kepakaran En. Muhamad Azam memfokuskan kepada pengurusan strategik, perancangan kewangan dan pengembangan perniagaan merentasi pelbagai sektor termasuk pembinaan, automotif, dan agro. Beliau memiliki pengalaman lebih sedekad dalam memajukan kejuruteraan dan industri, serta amat mahir dalam pengurusan syarikat korporat Bumiputera. Kredibiliti kepimpinan beliau dikukuhkan lagi dengan pendaftaran sijil-sijil utama industri seperti Sijil Taraf Bumiputera (STB), CIDB, dan Kementerian Kewangan (MOF).
+                Sebagai peneraju utama syarikat, kepakaran En. Muhamad Azam tertumpu pada pengurusan strategik, perancangan kewangan dan pengembangan perniagaan merentasi pelbagai sektor termasuk pembinaan, automotif, dan agro. Beliau memiliki pengalaman lebih sedekad dalam memajukan kejuruteraan dan industri, serta amat mahir dalam pengurusan syarikat korporat Bumiputera. Kredibiliti kepimpinan beliau dikukuhkan lagi dengan pendaftaran sijil-sijil utama industri seperti Sijil Taraf Bumiputera (STB), CIDB, dan Kementerian Kewangan (MOF).
               </p>
             </div>
             
@@ -97,7 +97,7 @@ export default function About() {
               </div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>Zulbaharin Bin Mamat</h3>
               <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-muted)' }}>
-                En. Zulbaharin memainkan peranan penting dalam menerajui aspek pengurusan operasi dan teknikal AWC. Kepakaran utama beliau tertumpu kepada penyeliaan projek di lapangan, kawalan kualiti (QC), dan pengurusan tenaga kerja mahir bagi sistem penyaman udara, pendawaian elektrik, dan CCTV. Berbekalkan pengalaman luas dan sijil kompetensi penyeliaan tapak bina, beliau berdedikasi memastikan setiap projek pembinaan dan penyelenggaraan disiapkan menepati jadual dan mematuhi piawaian standard kerja yang paling ketat.
+                En. Zulbaharin memainkan peranan penting dalam menerajui aspek pengurusan operasi dan teknikal AWC. Kepakaran utama beliau tertumpu pada penyeliaan projek di lapangan, kawalan kualiti (QC), dan pengurusan tenaga kerja mahir bagi sistem penyaman udara, pendawaian elektrik, dan CCTV. Berbekalkan pengalaman luas dan sijil kompetensi penyeliaan tapak bina, beliau berdedikasi memastikan setiap projek pembinaan dan penyelenggaraan disiapkan mengikut jadual dan mematuhi piawaian kerja yang paling ketat.
               </p>
             </div>
           </div>

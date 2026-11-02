@@ -78,6 +78,17 @@ export default function ArticleDetail() {
 
           {article.sections.map((section) => <ArticleSection section={section} key={`${article.slug}-${section.id}`} />)}
 
+          <section className="article-prose-section" aria-labelledby="article-sources-title">
+            <h2 id="article-sources-title">Rujukan teknikal</h2>
+            <div className="article-prose">
+              <ul>
+                {article.sources.map((source) => (
+                  <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           <div className="article-safety-note">
             <ShieldCheck size={24} aria-hidden="true" />
             <div><strong>Utamakan keselamatan.</strong><p>Panduan ini membantu anda memahami masalah. Pemeriksaan teknikal diperlukan untuk mengesahkan puncanya. Gangguan bekalan TNB: <a href="tel:15454">15454</a>. Kecemasan: <a href="tel:999">999</a>.</p></div>

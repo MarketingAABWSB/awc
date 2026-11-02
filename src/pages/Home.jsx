@@ -20,13 +20,13 @@ export default function Home() {
             <div className="hero-bottom-left">
               <h2>Pakar Penyaman Udara, Pendawaian & CCTV untuk Premis Anda.</h2>
               <a href="https://api.whatsapp.com/send/?phone=60177079747&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="btn-pill">
-                DAPATKAN TEMUJANJI!
+                DAPATKAN JANJI TEMU!
               </a>
             </div>
             <div className="hero-bottom-right">
               <div className="hero-description-bordered">
                 <p>
-                  Penyelesaian teknikal dan utiliti yang komprehensif, merangkumi pemasangan, penyelenggaraan, dan pembaikan untuk memastikan keselesaan dan keselamatan kediaman atau ruang komersial anda sentiasa di tahap optimum.
+                  Penyelesaian teknikal dan utiliti yang komprehensif, merangkumi pemasangan, penyelenggaraan, dan pembaikan untuk memastikan keselesaan dan keselamatan kediaman atau ruang komersial anda sentiasa pada tahap optimum.
                 </p>
                 <p>
                   Rakan kongsi dipercayai anda untuk hasil kerja yang teliti, selamat, dan berkualiti tinggi.
@@ -50,7 +50,7 @@ export default function Home() {
                 <span className="bento-label bento-label-primary">PENGENALAN SYARIKAT</span>
                 <h3>Kepakaran Teknikal, Diperkukuh oleh Pengalaman & Keselamatan.</h3>
                 <p>
-                  <strong>Azam Work Construction</strong> ditubuhkan pada Oktober 2022, mengkhususkan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial melalui perkhidmatan penyaman udara, pendawaian elektrik, dan pemasangan sistem CCTV.
+                  <strong>Azam Work Construction</strong> ditubuhkan pada Oktober 2022 dan mengkhusus dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial melalui perkhidmatan penyaman udara, pendawaian elektrik, dan pemasangan sistem CCTV.
                 </p>
                 <div style={{ marginTop: '2.5rem' }}>
                   <Link to="/about" className="btn-arrow">
@@ -186,7 +186,7 @@ export default function Home() {
               <span className="feature-number">02</span>
               <h3>Hasil Kerja Kemas & Selamat</h3>
               <p>
-                Pemasangan dilakukan dengan penuh teliti, mematuhi spesifikasi keselamatan industri, dan menjamin kemasan akhir (finishing) yang rapi.
+                Pemasangan dilakukan dengan teliti, mematuhi spesifikasi keselamatan industri, dan menjamin kemasan akhir (finishing) yang rapi.
               </p>
             </div>
             <div className="feature">

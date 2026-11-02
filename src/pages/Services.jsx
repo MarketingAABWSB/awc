@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Wind, Zap, Shield } from 'lucide-react';
+import { servicesData } from '../data/servicesData';
 
 export default function Services() {
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function Services() {
                   <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Penyaman Udara (Aircond)</h2>
                 </div>
                 <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  Menyediakan perkhidmatan lengkap merangkumi konsultasi pemilihan kapasiti (HP) yang sesuai, pemasangan unit baharu, penyelenggaraan berjadual (chemical cleaning dan servis biasa), hingga pembaikan kerosakan teknikal seperti kebocoran gas, masalah pemampat (compressor), atau kecekapan penyejukan yang merosot. Fokus diberikan kepada pengoptimuman penggunaan tenaga elektrik serta pemanjangan jangka hayat peralatan.
+                  {servicesData.aircond.description}
                 </p>
                 <div style={{ marginTop: '2rem' }}>
                   <a href="/services/aircond" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -55,7 +56,7 @@ export default function Services() {
                   <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Pendawaian Elektrik (Wiring)</h2>
                 </div>
                 <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  Pelaksanaan kerja pendawaian fasa tunggal (single-phase) dan tiga fasa (three-phase), penambahan mata kuasa (plug point) dan pencahayaan, pembaikan litar pintas, serta menaik taraf papan agihan (DB board). Turut menyediakan pembekalan komponen serta peralatan elektrik dan elektronik yang mematuhi piawaian keselamatan industri bagi menjamin keselamatan struktur bangunan daripada risiko kegagalan sistem kuasa.
+                  {servicesData.wiring.description}
                 </p>
                 <div style={{ marginTop: '2rem' }}>
                   <a href="/services/wiring" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -78,7 +79,7 @@ export default function Services() {
                   <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Sistem Keselamatan (CCTV)</h2>
                 </div>
                 <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  Rekabentuk susun atur, pemasangan, dan pengaturcaraan kamera litar tertutup (CCTV) berdefinisi tinggi, sama ada jenis analog mahupun IP camera. Sistem ini diintegrasikan dengan fungsi pemantauan jarak jauh (remote viewing) terus ke peranti mudah alih pelanggan untuk pengawasan 24/7, disokong oleh perkhidmatan penyelenggaraan serta penentukuran semula sistem bagi memastikan liputan keselamatan tanpa jurang.
+                  {servicesData.cctv.description}
                 </p>
                 <div style={{ marginTop: '2rem' }}>
                   <a href="/services/cctv" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>

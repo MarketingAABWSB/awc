@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
+const HOME_SECTION_IDS = ['laman-utama', 'tentang-kami', 'servis-kami', 'kenapa-pilih-kami', 'berita-panduan', 'hubungi-kami'];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('laman-utama');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const navbarRef = useRef(null);
   const location = useLocation();
   const isArticlesPage = location.pathname === '/artikel' || location.pathname.startsWith('/artikel/');
-  const isHomeSection = (targetId) => location.pathname === '/' && (
-    location.hash === `#${targetId}` || (targetId === 'laman-utama' && !location.hash)
-  );
+  const isHomeSection = (targetId) => location.pathname === '/' && activeSection === targetId;
+  const isGuideActive = isHomeSection('berita-panduan') || isArticlesPage;
 
   const closeMenus = () => {
     setIsMobileMenuOpen(false);
@@ -34,16 +37,45 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = null;
+    const sections = location.pathname === '/'
+      ? HOME_SECTION_IDS.map((id) => document.getElementById(id)).filter(Boolean)
+      : [];
+
+    const updateScrollState = () => {
+      frame = null;
       setIsScrolled(window.scrollY > 50);
+      if (!sections.length) return;
+
+      // Match the anchor spacing below the fixed navbar.
+      const sectionOffset = (navbarRef.current?.getBoundingClientRect().height ?? 80) + 24;
+      let currentSection = sections[0].id;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= sectionOffset + 1) currentSection = section.id;
+      }
+
+      // A short footer may never reach the navbar, even at the end of the page.
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1) {
+        currentSection = sections[sections.length - 1].id;
+      }
+      setActiveSection(currentSection);
     };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    const handleScroll = () => {
+      if (frame === null) frame = requestAnimationFrame(updateScrollState);
+    };
+    updateScrollState();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      if (frame !== null) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [location.pathname]);
 
   return (
-    <nav className={`navbar ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`} aria-label="Navigasi utama">
+    <nav ref={navbarRef} className={`navbar ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`} aria-label="Navigasi utama">
       <div className="container nav-container">
 
         {/* Hamburger Menu (Mobile Left) */}
@@ -100,7 +132,7 @@ export default function Navbar() {
           </div>
 
           <Link to="/#kenapa-pilih-kami" className={isHomeSection('kenapa-pilih-kami') ? 'active' : undefined} onClick={closeMenus}>Kenapa Kami</Link>
-          <Link to="/artikel" className={isArticlesPage ? 'active' : undefined} aria-current={isArticlesPage ? 'page' : undefined} onClick={closeMenus}>Berita & Panduan</Link>
+          <Link to="/#berita-panduan" className={isGuideActive ? 'active' : undefined} aria-current={isGuideActive ? (isArticlesPage ? 'page' : 'location') : undefined} onClick={closeMenus}>Berita & Panduan</Link>
           <Link to="/#hubungi-kami" className={isHomeSection('hubungi-kami') ? 'active' : undefined} onClick={closeMenus}>Hubungi Kami</Link>
         </div>
 

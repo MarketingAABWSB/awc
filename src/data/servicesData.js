@@ -11,17 +11,17 @@ export const servicesData = {
       '/AC8.jpeg',
       '/AC9.jpeg'
     ],
-    description: 'Menyediakan perkhidmatan lengkap merangkumi konsultasi pemilihan kapasiti (HP) yang sesuai, pemasangan unit baharu, penyelenggaraan berjadual (chemical cleaning dan servis biasa), hingga pembaikan kerosakan teknikal seperti kebocoran gas, masalah pemampat (compressor), atau kecekapan penyejukan yang merosot. Fokus diberikan kepada pengoptimuman penggunaan tenaga elektrik serta pemanjangan jangka hayat peralatan.',
+    description: 'Perkhidmatan merangkumi pemilihan kapasiti penyaman udara yang sesuai, pemasangan unit baharu, penyelenggaraan berkala serta pembaikan masalah seperti kebocoran bahan penyejuk, kerosakan pemampat atau prestasi penyejukan yang merosot. Kaedah pembersihan dipilih mengikut keadaan unit dan panduan pengeluar untuk membantu mengekalkan prestasi serta kecekapan tenaga.',
     scope: [
       'Pemasangan unit baharu',
-      'Penyelenggaraan berjadual (chemical cleaning dan servis biasa)',
-      'Pembaikan kerosakan teknikal (kebocoran gas, masalah pemampat)',
-      'Pengoptimuman penggunaan tenaga elektrik dan jangka hayat peralatan'
+      'Penyelenggaraan berkala dan pembersihan mengikut keadaan unit',
+      'Pembaikan kebocoran bahan penyejuk dan kerosakan pemampat',
+      'Pemeriksaan prestasi penyejukan dan kecekapan tenaga'
     ],
     faq: [
       {
         q: 'Berapa kerap perlu servis aircond?',
-        a: 'Sebaiknya setiap 6 bulan untuk penyelenggaraan biasa bagi memastikan prestasi yang optimum.'
+        a: 'Kekerapan servis bergantung pada model, tempoh penggunaan dan keadaan persekitaran. Ikut manual pengeluar dan nasihat juruteknik selepas pemeriksaan. Pembersihan penapis oleh pengguna mungkin diperlukan lebih kerap daripada servis profesional.'
       },
       {
         q: 'Adakah anda membekalkan aircond baru?',
@@ -37,11 +37,11 @@ export const servicesData = {
     id: 'wiring',
     title: 'Pendawaian Elektrik (Wiring)',
     image: '/wiring 1.jpeg',
-    description: 'Pelaksanaan kerja pendawaian fasa tunggal (single-phase) dan tiga fasa (three-phase), penambahan mata kuasa (plug point) dan pencahayaan, pembaikan litar pintas, serta menaik taraf papan agihan (DB board). Turut menyediakan pembekalan komponen serta peralatan elektrik dan elektronik yang mematuhi piawaian keselamatan industri bagi menjamin keselamatan struktur bangunan daripada risiko kegagalan sistem kuasa.',
+    description: 'Perkhidmatan merangkumi pendawaian fasa tunggal dan tiga fasa, penambahan soket serta pencahayaan, pengesanan punca gangguan elektrik dan naik taraf papan agihan. Skop kerja dan perlindungan elektrik perlu dinilai mengikut keadaan premis untuk membantu mengurangkan risiko renjatan elektrik serta kebakaran. Kerja pendawaian hendaklah dilaksanakan oleh kontraktor elektrik berdaftar dengan Suruhanjaya Tenaga serta orang kompeten yang sesuai.',
     scope: [
       'Kerja pendawaian fasa tunggal dan tiga fasa',
       'Penambahan mata kuasa (plug point) dan pencahayaan',
-      'Pembaikan litar pintas dan troubleshooting',
+      'Pengesanan dan pembaikan punca gangguan elektrik',
       'Naik taraf papan agihan (DB board)',
       'Menyediakan komponen mematuhi piawaian keselamatan'
     ],
@@ -56,7 +56,7 @@ export const servicesData = {
       },
       {
         q: 'Berapa kos untuk tambah satu plug point?',
-        a: 'Kos berbeza mengikut jenis rumah (surface atau conceal). Sila hubungi kami untuk sebut harga percuma.'
+        a: 'Kos bergantung pada kaedah pendawaian, sama ada permukaan atau tersembunyi, serta bahan dan skop kerja. Hubungi kami untuk mendapatkan sebut harga dan menyemak sebarang caj pemeriksaan atau lawatan.'
       }
     ]
   },
@@ -64,25 +64,25 @@ export const servicesData = {
     id: 'cctv',
     title: 'Sistem Keselamatan (CCTV)',
     image: '/cctv.jpg',
-    description: 'Rekabentuk susun atur, pemasangan, dan pengaturcaraan kamera litar tertutup (CCTV) berdefinisi tinggi, sama ada jenis analog mahupun IP camera. Sistem ini diintegrasikan dengan fungsi pemantauan jarak jauh (remote viewing) terus ke peranti mudah alih pelanggan untuk pengawasan 24/7, disokong oleh perkhidmatan penyelenggaraan serta penentukuran semula sistem bagi memastikan liputan keselamatan tanpa jurang.',
+    description: 'Reka bentuk susun atur, pemasangan dan konfigurasi kamera litar tertutup (CCTV) berdefinisi tinggi, sama ada kamera analog atau IP. Fungsi rakaman dan pemantauan jarak jauh bergantung pada model, storan serta sambungan rangkaian. Penempatan dan pelarasan kamera dirancang mengikut keadaan premis untuk membantu mengurangkan kawasan yang tidak diliputi kamera.',
     scope: [
-      'Pemasangan CCTV berdefinisi tinggi (Analog / IP Camera)',
-      'Fungsi pemantauan jarak jauh (remote viewing) melalui telefon pintar',
+      'Pemasangan CCTV berdefinisi tinggi (kamera analog atau IP)',
+      'Tetapan pemantauan jarak jauh melalui telefon pintar bagi sistem yang menyokongnya',
       'Perkhidmatan penyelenggaraan',
       'Penentukuran semula sistem'
     ],
     faq: [
       {
         q: 'Bolehkah saya pantau CCTV melalui telefon pintar?',
-        a: 'Ya, semua sistem kami menyokong pemantauan terus dari telefon pintar asalkan ada sambungan internet.'
+        a: 'Boleh bagi sistem yang menyokong fungsi tersebut. Kamera atau perakam, aplikasi dan sambungan internet perlu dikonfigurasi dengan betul. Sahkan keserasian model sebelum pemasangan.'
       },
       {
         q: 'Berapa lama rakaman boleh disimpan?',
-        a: 'Bergantung kepada kapasiti hard disk, kebiasaannya dari 2 minggu hingga 1 bulan.'
+        a: 'Tempohnya bergantung pada kapasiti storan, bilangan kamera, resolusi, kadar bingkai, pemampatan dan jadual rakaman. Tempoh simpanan perlu dianggarkan berdasarkan konfigurasi sebenar sistem.'
       },
       {
-        q: 'Perlu ada internet (WiFi) di rumah tak?',
-        a: 'Tidak semestinya untuk rakaman, tetapi WAJIB ada jika anda mahu pantau melalui telefon dari luar rumah.'
+        q: 'Adakah CCTV memerlukan internet atau Wi-Fi?',
+        a: 'Sistem yang menyokong rakaman setempat boleh merakam tanpa internet apabila bekalan kuasa, storan dan sambungan dalaman berfungsi. Pemantauan melalui internet dari luar premis memerlukan sambungan internet yang sesuai. Wi-Fi ialah salah satu kaedah sambungan; keperluannya bergantung pada model dan pemasangan.'
       }
     ]
   }

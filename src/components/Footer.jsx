@@ -61,8 +61,8 @@ export default function Footer() {
               <div className="contact-item">
                 <MapPin size={18} />
                 <span>
-                  <a href="https://maps.app.goo.gl/sJMaPrHHePjaCtUH8" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }} className="hover-underline">
-                    Lot 1966a, Jalan Wakaf Stan,<br />
+                  <a href="https://www.google.com/maps/search/?api=1&query=Lot%201566%20A%2C%20Jalan%20Wakaf%20Stan%2C%20Kubang%20Kerian%2C%2016150%20Kota%20Bharu%2C%20Kelantan" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }} className="hover-underline">
+                    Lot 1566 A, Jalan Wakaf Stan,<br />
                     Kubang Kerian,<br />
                     16150 Kota Bharu, Kelantan.
                   </a>
@@ -93,7 +93,8 @@ export default function Footer() {
             <h4>Cari Kami</h4>
             <div className="map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.334057889104!2d102.2618991!3d6.084126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDUnMDMuMyJOIDEwMsKwMTUnNDIuOCJF!5e0!3m2!1sen!2smy!4v1620000000000!5m2!1sen!2smy"
+                src="https://www.google.com/maps?q=Lot%201566%20A%2C%20Jalan%20Wakaf%20Stan%2C%20Kubang%20Kerian%2C%2016150%20Kota%20Bharu%2C%20Kelantan&output=embed"
+                title="Peta lokasi Azam Work Construction"
                 allowFullScreen=""
                 loading="lazy">
               </iframe>
