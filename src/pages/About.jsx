@@ -22,7 +22,7 @@ export default function About() {
                   <strong>Azam Work Construction</strong> ialah sebuah perniagaan perkongsian yang ditubuhkan pada Oktober 2022. Kami mengkhusus dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial.
                 </p>
                 <p>
-                  Fokus utama perkhidmatan kami merangkumi kerja-kerja sistem penyaman udara yang menyeluruh, pendawaian elektrik, dan pemasangan sistem keselamatan CCTV yang canggih untuk memastikan keselesaan dan keselamatan pelanggan kami.
+                  Fokus utama perkhidmatan kami merangkumi kerja-kerja sistem penyaman udara yang menyeluruh, pendawaian elektrik, pemasangan CCTV, autogate dan sistem alarm keselamatan untuk memastikan keselesaan dan keselamatan pelanggan kami.
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function About() {
                 <span className="grid-item-label">MISI</span>
                 <h3 className="grid-item-heading">Misi Kami</h3>
                 <p className="grid-item-text">
-                  Memberikan perkhidmatan pemasangan, penyelenggaraan, dan pembaikan teknikal (elektrik, penyaman udara, dan CCTV) yang berkualiti tinggi, telus, serta menepati piawaian keselamatan demi memastikan keselesaan, perlindungan, dan kepuasan berterusan untuk setiap pelanggan kami.
+                  Memberikan perkhidmatan pemasangan, penyelenggaraan, dan pembaikan teknikal (elektrik, penyaman udara, CCTV, autogate dan sistem alarm keselamatan) yang berkualiti tinggi, telus, serta menepati piawaian keselamatan demi memastikan keselesaan, perlindungan, dan kepuasan berterusan untuk setiap pelanggan kami.
                 </p>
                 <div className="grid-item-divider"></div>
               </div>

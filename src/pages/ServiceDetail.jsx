@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import { articles } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
+import PhotoCredit from '../components/PhotoCredit';
 import { Check, Plus, Minus, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ServiceDetail() {
@@ -14,6 +15,8 @@ export default function ServiceDetail() {
   // Scroll to top on load and when serviceId changes
   useEffect(() => {
     window.scrollTo(0, 0);
+    setActiveFaq(null);
+    setSelectedImageIndex(null);
   }, [serviceId]);
 
   const service = servicesData[serviceId];
@@ -52,6 +55,7 @@ export default function ServiceDetail() {
           <div className="service-detail-main">
             <div className="service-main-image-container">
               <img src={service.image} alt={service.title} className="service-main-image" />
+              <PhotoCredit credit={service.imageCredit} />
             </div>
             
             <div className="service-description" style={{ marginTop: '3rem' }}>
@@ -76,14 +80,23 @@ export default function ServiceDetail() {
               <div className="faq-accordion">
                 {service.faq.map((item, index) => (
                   <div key={index} className={`faq-item ${activeFaq === index ? 'active' : ''}`}>
-                    <button className="faq-question" onClick={() => toggleFaq(index)}>
+                    <button className="faq-question" aria-expanded={activeFaq === index} aria-controls={`${service.id}-faq-${index}`} onClick={() => toggleFaq(index)}>
                       <span style={{ fontWeight: '600' }}>{item.q}</span>
                       <span className="faq-icon" style={{ color: 'var(--primary)' }}>
                         {activeFaq === index ? <Minus size={20} /> : <Plus size={20} />}
                       </span>
                     </button>
-                    <div className="faq-answer">
-                      <p style={{ margin: 0, padding: '0 1.5rem 1.5rem 1.5rem', color: 'var(--text-muted)' }}>{item.a}</p>
+                    <div id={`${service.id}-faq-${index}`} className="faq-answer" aria-hidden={activeFaq !== index}>
+                      <div className="faq-answer-content">
+                        <div className="faq-answer-body">
+                          {item.a && <p>{item.a}</p>}
+                          {item.bullets && (
+                            <ul className="faq-answer-list">
+                              {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                            </ul>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -135,7 +148,7 @@ export default function ServiceDetail() {
       </div>
 
       {/* Lightbox Modal */}
-      {selectedImageIndex !== null && (
+      {selectedImageIndex !== null && service.gallery?.[selectedImageIndex] && (
         <div 
           style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
           onClick={() => setSelectedImageIndex(null)}

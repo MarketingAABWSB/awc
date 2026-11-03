@@ -127,6 +127,8 @@ export default function Navbar() {
                 <Link to="/services/aircond" onClick={closeMenus}>Penyaman Udara (Aircond)</Link>
                 <Link to="/services/wiring" onClick={closeMenus}>Pendawaian Elektrik (Wiring)</Link>
                 <Link to="/services/cctv" onClick={closeMenus}>Sistem Keselamatan (CCTV)</Link>
+                <Link to="/services/autogate" onClick={closeMenus}>Autogate System</Link>
+                <Link to="/services/alarm" onClick={closeMenus}>Alarm Security System</Link>
               </div>
             )}
           </div>

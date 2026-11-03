@@ -1,0 +1,74 @@
+.service-photo-credit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-photo-credit-toggle {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.65);
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.service-photo-credit-toggle::before {
+  position: absolute;
+  inset: -8px;
+  content: '';
+}
+
+.service-photo-credit-panel {
+  position: absolute;
+  right: 8px;
+  bottom: 44px;
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 16px);
+  max-height: calc(100% - 56px);
+  overflow: auto;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.94);
+  color: #f8fafc;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+  pointer-events: auto;
+}
+
+.service-photo-credit-panel[hidden] {
+  display: none;
+}
+
+.service-photo-credit-panel a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.service-photo-credit-panel a:hover {
+  color: #fcd34d;
+}
+
+.service-photo-credit-panel span {
+  display: block;
+}
+
+.service-photo-credit-toggle:focus-visible,
+.service-photo-credit-panel a:focus-visible {
+  outline: 2px solid #fcd34d;
+  outline-offset: 2px;
+}

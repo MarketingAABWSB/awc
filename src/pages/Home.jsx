@@ -1,8 +1,11 @@
 import React from 'react';
-import { Wind, Zap, Shield, ArrowRight, Target, Compass } from 'lucide-react';
+import { ArrowRight, Target, Compass } from 'lucide-react';
 import TikTokCarousel from '../components/TikTokCarousel';
+import ServiceCarousel from '../components/ServiceCarousel';
+import ServiceCard from '../components/ServiceCard';
 import ArticleCard from '../components/ArticleCard';
 import { articles } from '../data/articles';
+import { servicesData } from '../data/servicesData';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -18,7 +21,7 @@ export default function Home() {
           </div>
           <div className="hero-bottom-grid">
             <div className="hero-bottom-left">
-              <h2>Pakar Penyaman Udara, Pendawaian & CCTV untuk Premis Anda.</h2>
+              <h2>Pakar Penyaman Udara, Pendawaian, CCTV, Autogate & Alarm untuk Premis Anda.</h2>
               <a href="https://api.whatsapp.com/send/?phone=60177079747&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="btn-pill">
                 DAPATKAN JANJI TEMU!
               </a>
@@ -50,7 +53,7 @@ export default function Home() {
                 <span className="bento-label bento-label-primary">PENGENALAN SYARIKAT</span>
                 <h3>Kepakaran Teknikal, Diperkukuh oleh Pengalaman & Keselamatan.</h3>
                 <p>
-                  <strong>Azam Work Construction</strong> ditubuhkan pada Oktober 2022 dan mengkhusus dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial melalui perkhidmatan penyaman udara, pendawaian elektrik, dan pemasangan sistem CCTV.
+                  <strong>Azam Work Construction</strong> ditubuhkan pada Oktober 2022 dan mengkhusus dalam menyediakan penyelesaian teknikal dan utiliti berkualiti tinggi untuk premis kediaman dan komersial melalui perkhidmatan penyaman udara, pendawaian elektrik, sistem CCTV, autogate, dan alarm keselamatan.
                 </p>
                 <div style={{ marginTop: '2.5rem' }}>
                   <Link to="/about" className="btn-arrow">
@@ -97,70 +100,9 @@ export default function Home() {
       <section id="servis-kami" className="section services">
         <div className="container">
           <h2 className="section-title">Kepakaran Kami</h2>
-          <div className="services-grid">
-            {/* Aircond */}
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/AC1.jpeg" alt="Penyaman Udara" />
-              </div>
-              <div className="service-content">
-                <div className="service-icon">
-                  <Wind />
-                </div>
-                <h3>Penyaman Udara (Aircond)</h3>
-                <p>
-                  Pemasangan unit baharu, servis berjadual, serta baik pulih sistem penyaman udara anda.
-                </p>
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-                  <Link to="/services/aircond" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                    <ArrowRight size={20} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
-            {/* Wiring */}
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/wiring 1.jpeg" alt="Pendawaian Elektrik" />
-              </div>
-              <div className="service-content">
-                <div className="service-icon">
-                  <Zap />
-                </div>
-                <h3>Pendawaian Elektrik (Wiring)</h3>
-                <p>
-                  Kerja-kerja pendawaian elektrik, penambahan plug point, pembaikan litar pintas, dan naik taraf DB board.
-                </p>
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-                  <Link to="/services/wiring" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                    <ArrowRight size={20} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* CCTV */}
-            <div className="service-card">
-              <div className="service-image">
-                <img src="/cctv.jpg" alt="Sistem CCTV" />
-              </div>
-              <div className="service-content">
-                <div className="service-icon">
-                  <Shield />
-                </div>
-                <h3>Sistem Keselamatan (CCTV)</h3>
-                <p>
-                  Pemasangan sistem CCTV berdefinisi tinggi berserta fungsi pemantauan jarak jauh melalui telefon pintar anda.
-                </p>
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
-                  <Link to="/services/cctv" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--primary)', color: 'white', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                    <ArrowRight size={20} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ServiceCarousel>
+            {Object.values(servicesData).map((service) => <ServiceCard key={service.id} service={service} />)}
+          </ServiceCarousel>
           
           <div style={{ textAlign: 'center', margin: '4rem 0 2rem 0' }}>
             <Link to="/services" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', borderColor: 'var(--primary)', color: 'var(--secondary)' }}>
@@ -177,9 +119,9 @@ export default function Home() {
           <div className="why-us-grid">
             <div className="feature">
               <span className="feature-number">01</span>
-              <h3>Kepakaran Bersepadu 3-Dalam-1</h3>
+              <h3>Kepakaran Bersepadu 5-Dalam-1</h3>
               <p>
-                Penyelesaian aircond, wiring, dan CCTV di bawah satu bumbung. Jimatkan masa dan kos anda tanpa perlu mencari pelbagai kontraktor berasingan.
+                Penyelesaian aircond, wiring, CCTV, autogate, dan alarm keselamatan di bawah satu bumbung. Jimatkan masa dan kos anda tanpa perlu mencari pelbagai kontraktor berasingan.
               </p>
             </div>
             <div className="feature">

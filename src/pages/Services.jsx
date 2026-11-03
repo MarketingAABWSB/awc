@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
-import { Wind, Zap, Shield } from 'lucide-react';
+import { Wind, Zap, Shield, Fence, BellRing, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
+import PhotoCredit from '../components/PhotoCredit';
+import '../styles/services-overview.css';
+
+const serviceIcons = { aircond: Wind, wiring: Zap, cctv: Shield, autogate: Fence, alarm: BellRing };
 
 export default function Services() {
   useEffect(() => {
@@ -8,95 +13,39 @@ export default function Services() {
   }, []);
 
   return (
-    <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--background)' }}>
-      {/* Page Header */}
-      <div style={{ backgroundColor: 'var(--secondary)', color: 'white', padding: '4rem 0', textAlign: 'center' }}>
+    <div className="services-overview">
+      <header className="services-overview-header">
         <div className="container">
-          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Servis Kami</h1>
-          <p style={{ color: '#cbd5e1', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
+          <h1>Servis Kami</h1>
+          <p>
             Penyelesaian utiliti dan teknikal yang komprehensif, merangkumi pemasangan, penyelenggaraan, dan pembaikan untuk premis anda.
           </p>
         </div>
+      </header>
+
+      <div className="services-overview-list container">
+        {Object.values(servicesData).map((service, index) => {
+          const Icon = serviceIcons[service.id];
+
+          return (
+            <article key={service.id} className={`service-overview-row${index % 2 ? ' service-overview-row--reverse' : ''}`} aria-labelledby={`overview-${service.id}`}>
+              <div className="service-overview-photo">
+                <img src={service.image} alt={service.title} loading={index === 0 ? 'eager' : 'lazy'} />
+                <PhotoCredit credit={service.imageCredit} />
+              </div>
+              <div className="service-overview-content">
+                <div className="service-overview-icon"><Icon size={23} aria-hidden="true" /></div>
+                <span className="service-overview-eyebrow">SERVIS</span>
+                <h2 id={`overview-${service.id}`}>{service.title}</h2>
+                <p>{service.summary}</p>
+                <Link to={`/services/${service.id}`} className="service-overview-link" aria-label={`Lebih lanjut tentang ${service.title}`}>
+                  LEBIH LANJUT <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
+            </article>
+          );
+        })}
       </div>
-
-      <section className="section">
-        <div className="container">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            
-            {/* Aircond Detail */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', backgroundColor: 'var(--surface)', padding: '2rem', borderRadius: '1.5rem', boxShadow: 'var(--shadow-sm)' }} className="service-detail-row">
-              <div style={{ order: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                  <div style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', padding: '1rem', borderRadius: '50%', color: 'var(--primary)' }}>
-                    <Wind size={32} />
-                  </div>
-                  <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Penyaman Udara (Aircond)</h2>
-                </div>
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  {servicesData.aircond.description}
-                </p>
-                <div style={{ marginTop: '2rem' }}>
-                  <a href="/services/aircond" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                    Maklumat Lanjut <Wind size={18} />
-                  </a>
-                </div>
-              </div>
-              <div style={{ order: 2, borderRadius: '1rem', overflow: 'hidden', height: '350px' }}>
-                <img src="/AC1.jpeg" alt="Penyaman Udara" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            </div>
-
-            {/* Wiring Detail */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', backgroundColor: 'var(--surface)', padding: '2rem', borderRadius: '1.5rem', boxShadow: 'var(--shadow-sm)' }} className="service-detail-row reverse">
-              <div style={{ order: 2 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                  <div style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', padding: '1rem', borderRadius: '50%', color: 'var(--primary)' }}>
-                    <Zap size={32} />
-                  </div>
-                  <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Pendawaian Elektrik (Wiring)</h2>
-                </div>
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  {servicesData.wiring.description}
-                </p>
-                <div style={{ marginTop: '2rem' }}>
-                  <a href="/services/wiring" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                    Maklumat Lanjut <Zap size={18} />
-                  </a>
-                </div>
-              </div>
-              <div style={{ order: 1, borderRadius: '1rem', overflow: 'hidden', height: '350px' }}>
-                <img src="/wiring 1.jpeg" alt="Pendawaian Elektrik" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            </div>
-
-            {/* CCTV Detail */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', backgroundColor: 'var(--surface)', padding: '2rem', borderRadius: '1.5rem', boxShadow: 'var(--shadow-sm)' }} className="service-detail-row">
-              <div style={{ order: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                  <div style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', padding: '1rem', borderRadius: '50%', color: 'var(--primary)' }}>
-                    <Shield size={32} />
-                  </div>
-                  <h2 style={{ fontSize: '2rem', marginBottom: 0, color: 'var(--secondary)' }}>Sistem Keselamatan (CCTV)</h2>
-                </div>
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                  {servicesData.cctv.description}
-                </p>
-                <div style={{ marginTop: '2rem' }}>
-                  <a href="/services/cctv" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                    Maklumat Lanjut <Shield size={18} />
-                  </a>
-                </div>
-              </div>
-              <div style={{ order: 2, borderRadius: '1rem', overflow: 'hidden', height: '350px' }}>
-                <img src="/cctv.jpg" alt="Sistem CCTV" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-      
-      {/* Mobile media queries specific to this page could go in index.css, but we will rely on standard flex wrapping if we added a CSS class */}
     </div>
   );
 }

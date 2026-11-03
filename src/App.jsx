@@ -9,6 +9,7 @@ import ServiceDetail from './pages/ServiceDetail';
 import Articles from './pages/Articles';
 import ArticleDetail from './pages/ArticleDetail';
 import { getArticleBySlug } from './data/articles';
+import { servicesData } from './data/servicesData';
 import './styles/articles.css';
 
 function RouteEffects() {
@@ -26,12 +27,13 @@ function RouteEffects() {
 
   useEffect(() => {
     const article = pathname.startsWith('/artikel/') ? getArticleBySlug(pathname.split('/')[2]) : null;
+    const service = pathname.startsWith('/services/') ? servicesData[pathname.split('/')[2]] : null;
     const titles = { '/artikel': 'Berita & Panduan', '/about': 'Tentang Kami', '/services': 'Servis Kami' };
-    const title = article?.title || titles[pathname] || (pathname.startsWith('/artikel/') ? 'Artikel Tidak Dijumpai' : null);
+    const title = article?.title || service?.title || titles[pathname] || (pathname.startsWith('/artikel/') ? 'Artikel Tidak Dijumpai' : null);
     document.title = title ? `${title} | Azam Work Construction` : 'Azam Work Construction';
-    const description = article?.description || (pathname === '/artikel'
+    const description = article?.description || service?.description || (pathname === '/artikel'
       ? 'Panduan aircond dan keselamatan elektrik untuk rumah, kedai dan pejabat di Kelantan. Fahami simptom, baca panduan dan hubungi Azam Work Construction.'
-      : 'Azam Work Construction menyediakan perkhidmatan penyaman udara, pendawaian elektrik dan CCTV untuk kediaman serta premis komersial di Kelantan.');
+      : 'Azam Work Construction menyediakan perkhidmatan penyaman udara, pendawaian elektrik, CCTV, autogate dan sistem alarm keselamatan untuk kediaman serta premis komersial di Kelantan.');
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
   }, [pathname]);
 

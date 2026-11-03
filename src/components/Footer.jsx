@@ -51,6 +51,8 @@ export default function Footer() {
               <Link to="/services/aircond">Penyaman Udara (Aircond)</Link>
               <Link to="/services/wiring">Pendawaian Elektrik (Wiring)</Link>
               <Link to="/services/cctv">Sistem Keselamatan (CCTV)</Link>
+              <Link to="/services/autogate">Autogate System</Link>
+              <Link to="/services/alarm">Alarm Security System</Link>
             </div>
           </div>
 
